@@ -41,6 +41,10 @@ a{color:inherit;text-decoration:none}
 .px-ico{width:14px;height:14px;fill:currentColor;shape-rendering:crispEdges}
 
 /* Topbar */
+.dummy-banner{position:relative;z-index:101;background:#ffd400;color:#0a0a0a;text-align:center;font-size:.68rem;font-weight:700;letter-spacing:.04em;line-height:1.55;
+  padding:.7rem 1.5rem;border-block:6px solid transparent;
+  border-image:repeating-linear-gradient(-45deg,#0a0a0a 0 10px,#ffd400 10px 20px) 6}
+.dummy-banner b{background:var(--hot);color:#fff;padding:0 .3em}
 .topbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:1rem;
   padding:.8rem 2rem;background:#f2f0ea;border-bottom:var(--b)}
 .logo{display:inline-flex;align-items:baseline;gap:.15em;line-height:1;font-size:1.5rem}
