@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYSWEAR — Deconstructed Layered Garments</title>
+<meta name="description" content="syswear is a high-tech terminal for purchasing analog, imperfect, textured garments. Raw-edge wool, thermal base layers, unraveled knits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&family=VT323&family=Pixelify+Sans:wght@400;700&family=Sixtyfour&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="scanlines" aria-hidden="true"></div>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <a href="#" class="logo" id="logo" aria-label="SYSWEAR home"><span class="logo-sys">SYS</span><span class="logo-wear"><span>We</span><span class="wa"><b>a</b><i></i></span><span>r</span></span></a>
+  <nav class="nav mono">
+    <a href="#shop" id="nav-shop">[01] INDEX</a>
+    <a href="#exploded" id="nav-exploded">[02] ANATOMY</a>
+    <a href="#styling" id="nav-styling">[03] STYLING</a>
+      <a href="#manifesto" id="nav-manifesto">[04] MANIFESTO</a>
+  </nav>
+  <div class="topbar-actions">
+    <button class="px-btn small" id="btn-filter" data-sfx><svg class="px-ico" viewBox="0 0 8 8"><path d="M0 1h8v1H0zM2 4h4v1H2zM3 6h2v1H3z"/></svg>FILTER</button>
+    <button class="px-btn small accent" id="btn-cart" data-sfx><svg class="px-ico" viewBox="0 0 8 8"><path d="M0 1h2v1H0zM2 2h6v3H2zM2 6h1v1H2zM6 6h1v1H6z"/></svg>CART [<span id="cart-count">0</span>]</button>
+    <button class="px-btn small ghost" id="btn-sound" data-sfx aria-label="Toggle sound">SFX:ON</button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero grid-12" id="hero">
+  <div class="hero-terminal">
+    <div class="mono label">SYS.BRAND // ATELIER — NODE 07</div>
+    <h1 class="logo hero-logo" aria-label="SYSWEAR"><span class="logo-sys">SYS</span><span class="logo-wear"><span>We</span><span class="wa"><b>a</b><i></i></span><span>r</span></span></h1>
+    <div class="stream mono" id="stream" aria-hidden="true"></div>
+    <div class="clock-box">
+      <div class="mono label">SYS.TIME // LOCAL</div>
+      <div class="clock" id="clock">00:00:00</div>
+      <div class="mono hero-date" id="date">----</div>
+    </div>
+    <div class="hero-copy">
+      <h2 class="giant reveal-down" data-anim><span class="ln"><span>IMPERFECT</span></span><span class="ln"><span>BY</span></span><span class="ln"><span>DESIGN.</span></span></h2>
+      <p class="mono small-txt typewriter" id="type-p">COLLECTION 004 // "THERMAL MEMORY". Hand-finished wool layered permanently over organic thermal. No two hems unravel the same way.</p>
+      <a href="#shop" class="px-btn fade-in" id="hero-cta" data-sfx>ACCESS INDEX ▸</a>
+    </div>
+  </div>
+  <figure class="hero-look" id="hero-look">
+    <img src="assets/hero.png" alt="Model wearing raw-edge grey wool tee layered over white thermal" id="hero-img">
+    <svg class="hs-lines" id="hs-lines" aria-hidden="true"></svg>
+    <div class="hs-layer" id="hs-layer"></div>
+    <div class="like-this" aria-hidden="true"><span class="doya" id="doya">do ya</span><span class="like" id="like">LIKE</span><span class="this">This?</span><i></i></div>
+    <div class="look-tag mono"><span id="look-tag-title">LOOK_01 / RAW-EDGE LAYER SYSTEM</span><br><span class="neon">● LIVE FEED</span> <span id="zoom-state">// CLICK TO ZOOM</span></div>
+    <div class="look-nav mono" id="look-nav"></div>
+    <div class="crosshair" id="crosshair"><div class="lens" id="lens"></div><span class="lens-z mono" id="lens-z">2.5×</span></div>
+  </figure>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap"><div class="marquee mono"><div class="marquee-track">
+  ✳ RAW EDGES ARE NOT DEFECTS ✳ HAND-UNRAVELED HEMS ✳ EXPOSED STITCH ARCHITECTURE ✳ 100% ORGANIC FIBER ✳ SHIPS WORLDWIDE ✳ RAW EDGES ARE NOT DEFECTS ✳ HAND-UNRAVELED HEMS ✳ EXPOSED STITCH ARCHITECTURE ✳ 100% ORGANIC FIBER ✳ SHIPS WORLDWIDE ✳
+</div></div></div>
+
+<!-- SHOP -->
+<section class="shop" id="shop">
+  <div class="section-head grid-12">
+    <span class="mono idx" data-type>[01]</span>
+    <h2 class="giant reveal-lr" data-anim><span class="ln">INDEX<sup class="mono" id="result-count">06</sup></span></h2>
+    <div class="logo logo-big head-logo fade-in" data-anim aria-hidden="true"><span class="logo-sys">SYS</span><span class="logo-wear"><span>We</span><span class="wa"><b>a</b><i></i></span><span>r</span></span></div>
+    <p class="mono small-txt" data-type>Every garment is logged with a serial. Imperfections are catalogued, not corrected.</p>
+  </div>
+  <div class="product-grid" id="product-grid"></div>
+</section>
+
+<!-- EXPLODED VIEW -->
+<section class="exploded grid-12" id="exploded">
+  <div class="ex-info">
+    <span class="mono idx" data-type>[02]</span>
+    <h2 class="giant reveal-lr" data-anim><span class="ln">ANATOMY</span><span class="ln">OF A</span><span class="ln">LAYER.</span></h2>
+    <p class="mono small-txt" data-type>SKU // 099-COTTON-WOOL — "TWO-IN-ONE DECONSTRUCTED TEE". Drag the separation slider to pull the layers apart.</p>
+    <table class="spec mono stagger-rows" data-anim>
+      <tr><td>OUTER</td><td>Raw-edge merino wool knit, 240gsm</td></tr>
+      <tr><td>INNER</td><td>Organic cotton waffle thermal</td></tr>
+      <tr><td>BOND</td><td>Exposed hand-stitch, 48 pts</td></tr>
+      <tr><td>HEM</td><td>Unraveled, asymmetric −3.2cm</td></tr>
+    </table>
+    <label class="ex-progress mono fade-in" data-anim for="ex-slider">SEPARATION <span id="ex-pct">0%</span>
+      <input type="range" id="ex-slider" class="ex-slider" min="0" max="100" value="0"></label>
+    <button class="px-btn accent" data-add="p1" id="ex-add" data-sfx>ADD TO CART — €340</button>
+  </div>
+  <div class="ex-stage" id="ex-stage">
+    <div class="ex-grid" aria-hidden="true"></div>
+    <img src="assets/inner.png" class="layer inner" id="layer-inner" alt="Inner thermal base layer">
+    <img src="assets/outer.png" class="layer outer" id="layer-outer" alt="Outer raw-edge wool layer">
+    <div class="callout c1"><span class="line"></span><span class="mono">01 — RAW EDGE WOOL KNIT</span></div>
+    <div class="callout c2"><span class="line"></span><span class="mono">02 — EXPOSED STITCH BOND</span></div>
+    <div class="callout c3"><span class="line"></span><span class="mono">03 — INNER THERMAL BASE LAYER</span></div>
+    <div class="callout c4"><span class="line"></span><span class="mono">04 — UNRAVELED HEM / NO TWO ALIKE</span></div>
+  </div>
+</section>
+
+<!-- STYLING -->
+<section class="styling" id="styling">
+  <div class="section-head grid-12 styling-head">
+    <span class="mono idx" data-type>[03]</span>
+    <h2 class="giant reveal-lr" data-anim><span class="ln">STYLING</span></h2>
+    <p class="mono small-txt" data-type>Light is not always light, and dark is not always dark. Every fit carries a little of its opposite.</p>
+  </div>
+  <div class="yy">
+    <div class="yy-side yy-dark">
+      <figure class="yy-photo"><img src="assets/look2.jpg" alt="Dark look: charcoal beanie, charcoal ruin hoodie, black mended jeans" loading="lazy"></figure>
+      <h3 class="yy-word reveal-lr" data-anim><span class="ln">Ying</span></h3>
+      <ul class="yy-fit mono">
+        <li><button data-style="p16|assets/p16v3.jpg">CHARCOAL DARNED BEANIE</button></li>
+        <li><button data-style="p5|">CHARCOAL RUIN HOODIE</button></li>
+        <li><button data-style="p9|assets/p9v2.jpg">BLACK MENDED TROUSER</button></li>
+      </ul>
+      <span class="yy-note mono">DARK BASE // CREAM DARNS + WHITE BASTING</span>
+    </div>
+    <div class="yy-side yy-light">
+      <figure class="yy-photo"><img src="assets/look3.jpg" alt="Light look: oat layered longsleeve, peat sweater, block scarf, moss cord patch pants" loading="lazy"></figure>
+      <h3 class="yy-word reveal-lr" data-anim><span class="ln">Yang</span></h3>
+      <ul class="yy-fit mono">
+        <li><button data-style="p4|">OAT LAYERED LONGSLEEVE</button></li>
+        <li><button data-style="p6|assets/p6v2.jpg">PEAT DARNED SWEATER</button></li>
+        <li><button data-style="p18|">UNRAVEL BLOCK SCARF</button></li>
+        <li><button data-style="p14|">MOSS CORD PATCH PANT</button></li>
+      </ul>
+      <span class="yy-note mono">LIGHT BASE // PEAT BROWN + MOSS WEIGHT</span>
+    </div>
+    <div class="yy-amp" aria-label="and"><span class="w">&amp;</span><span class="b">&amp;</span></div>
+  </div>
+</section>
+<section class="manifesto grid-12" id="manifesto">
+  <span class="mono idx" data-type>[04]</span>
+  <p class="manifesto-txt" data-anim>We built a machine of perfect pixels to sell you something <em class="hl"><span>beautifully unfinished.</span></em></p>
+  <div class="stats" data-anim>
+    <div><b data-count="48">0</b><span class="mono" data-type>HAND STITCHES / UNIT</span></div>
+    <div><b data-count="18">0</b><span class="mono" data-type>PIECES IN COLLECTION 004</span></div>
+    <div><b data-count="100" data-suffix="%">0%</b><span class="mono" data-type>ORGANIC FIBER</span></div>
+  </div>
+</section>
+
+<!-- REPLAY PAPER -->
+<div class="paper-zone">
+  <div class="paper-wrap" data-anim>
+    <div class="paper">
+      <p class="paper-txt">What, you liked the animations so much you wanna see 'em again?</p>
+      <button class="px-btn accent" id="btn-replay" data-sfx>YES</button>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="footer mono fade-in" data-anim>
+  <span class="foot-brand"><span class="logo logo-big" aria-hidden="true"><span class="logo-sys">SYS</span><span class="logo-wear"><span>We</span><span class="wa"><b>a</b><i></i></span><span>r</span></span></span><span>© 2026 syswear</span></span><span class="foot-legal">
+    <span class="foot-links"><a href="#">SHIPPING</a><a href="#">RETURNS</a><a href="#">CARE GUIDE</a><a href="#">CONTACT</a><a href="#">@SYSWEAR</a></span>
+    <span id="foot-coords">LAT −34.6037 / LON −58.3816 — CABA</span>
+    <b>syswear© 2026 — ALL RIGHTS RESERVED</b>
+    <span>HAND-MADE IN BUENOS AIRES, ARGENTINA</span>
+    <span>SMALL BATCH · NO TWO PIECES ALIKE · SHIPS WORLDWIDE</span>
+    <span>NATURAL FIBERS · PLANT DYES · ZERO-WASTE OFFCUTS</span>
+    <span>BUILD 4.0.7 — ALL SYSTEMS NOMINAL</span>
+  </span>
+</footer>
+
+<!-- WINDOWS -->
+<div class="win" id="win-cart" data-win hidden>
+  <div class="win-bar" data-drag><span class="win-title"><i class="px-dot"></i>CART.EXE</span>
+    <span class="win-ctrls"><button data-min aria-label="Minimize">_</button><button data-close aria-label="Close">×</button></span></div>
+  <div class="win-body">
+    <ul class="cart-list" id="cart-list"></ul>
+    <div class="cart-total mono"><span>SUBTOTAL</span><b id="cart-total">€0</b></div>
+    <button class="px-btn accent full" id="btn-checkout" data-sfx>EXECUTE CHECKOUT ▸</button>
+  </div>
+</div>
+
+<div class="win" id="win-filter" data-win hidden>
+  <div class="win-bar" data-drag><span class="win-title"><i class="px-dot blue"></i>FILTER.SYS</span>
+    <span class="win-ctrls"><button data-min aria-label="Minimize">_</button><button data-close aria-label="Close">×</button></span></div>
+  <div class="win-body">
+    <div class="mono label">CATEGORY</div>
+    <div class="chips" id="chips-cat"></div>
+    <div class="mono label">MAX PRICE — <span id="price-val">€600</span></div>
+    <input type="range" id="price-range" min="100" max="600" step="10" value="600">
+    <div class="mono label">SORT</div>
+    <div class="chips" id="chips-sort">
+      <button class="chip on" data-sort="serial">SERIAL</button>
+      <button class="chip" data-sort="asc">PRICE ↑</button>
+      <button class="chip" data-sort="desc">PRICE ↓</button>
+    </div>
+  </div>
+</div>
+
+<div class="win wide" id="win-quick" data-win hidden>
+  <div class="win-bar" data-drag><span class="win-title"><i class="px-dot"></i><span id="qv-title">QUICKVIEW</span></span>
+    <span class="win-ctrls"><button data-min aria-label="Minimize">_</button><button data-close aria-label="Close">×</button></span></div>
+  <div class="win-body qv" id="qv-body"></div>
+</div>
+
+<div class="toast mono" id="toast"></div>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
